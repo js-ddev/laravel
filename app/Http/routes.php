@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get ('/article{n}', function($n)
+// {
+//     return view('article')->with('numero', $n);
+// })->where('n', '[0-9]+');
+
+Route::get('/', 'WelcomeController@index');
+
+get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
+
+get('users', 'UsersController@getInfos');
+
+post('users', 'UsersController@postInfos');
