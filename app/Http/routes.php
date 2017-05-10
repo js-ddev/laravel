@@ -24,6 +24,12 @@ Route::get('/', 'WelcomeController@index');
 
 get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
 
+get('facture/{n}', function($n) { 
+
+    return view('facture')->withNumero($n);
+
+})->where('n', '[0-9]+');
+
 get('users', 'UsersController@getInfos');
 
 post('users', 'UsersController@postInfos');

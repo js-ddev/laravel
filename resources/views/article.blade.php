@@ -1,4 +1,20 @@
-<!doctype html>
+@extends('template')
+
+
+@section('titre')
+
+    Les articles
+
+@stop
+
+
+@section('contenu')
+
+    <p>C'est l'article n° {{ $numero }}</p>
+
+@stop
+
+<!-- <!doctype html>
 
 <html lang="fr">
 
@@ -18,4 +34,4 @@
 
 </body>
 
-</html>
+</html> -->
