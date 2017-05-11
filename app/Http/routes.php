@@ -24,7 +24,7 @@ Route::get('/', 'WelcomeController@index');
 
 get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
 
-get('facture/{n}', function($n) { 
+get('facture/{n}', function($n) {
 
     return view('facture')->withNumero($n);
 
@@ -33,3 +33,5 @@ get('facture/{n}', function($n) {
 get('users', 'UsersController@getInfos');
 
 post('users', 'UsersController@postInfos');
+
+Route::controller('contact', 'ContactController');
