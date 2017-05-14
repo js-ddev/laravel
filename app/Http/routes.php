@@ -35,3 +35,5 @@ get('users', 'UsersController@getInfos');
 post('users', 'UsersController@postInfos');
 
 Route::resource('demo', 'DemoController');
+
+Route::controller('contact', 'ContactController');
