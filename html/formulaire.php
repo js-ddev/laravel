@@ -5,6 +5,7 @@
 	<title>PimpIt!</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 
@@ -170,8 +171,13 @@
 				</p>
 
 				<p class="">
-					<input type="number" name="effectif" id="effectif" placeholder="Effectif *"/>
-					<label for="effectif"></label>
+					<label for="effectif">Effectif * :</label>
+					<select class="" name="effectif">
+						<option value="1">entre 1 et 9</option>
+						<option value="10">entre 10 et 49</option>
+						<option value="50">entre 50 et 250</option>
+						<option value="50">250 et plus</option>
+					</select>
 				</p>
 
 				<p class="">
@@ -363,14 +369,8 @@
 
 				<p>
 					<label for="langue_1_niveau">Votre niveau de 1 à 100</label>
-					<input type="range" id="range1" name="langue_1_niveau" id="langue_1_niveau" class="slider" min="10" max="100" step="10" value="0" style="width:220px;" onchange="showValue1(this.value)" />
-					<span id="range">10</span><span> %</span>
-					<script type="text/javascript">
-					function showValue1(newValue)
-					{
-					   document.getElementById("range").innerHTML=newValue;
-					}
-					</script>
+					<input type="text" id="langue_1_niveau">
+					<div id="slider-range-max"></div>
 				</p>
 
 				<p class="">
@@ -393,17 +393,158 @@
 			<label for="description"></label>
 
 			<br />
+			<h4>Centres d'intérêt</h4>
+
 			<p class="">
 				<input type="text" name="passion_1" id="passion_1" placeholder="Centres d'intérêt"/>
 				<label for="passion_1"></label>
 			</p>
 			<p>
 				<label for="passion_1">Niveau de pratique</label>
-				<input type="range" id="range2" name="passion_1" id="passion_2" class="slider" min="10" max="100" step="10" value="0" style="width:220px;" onchange="showValue(this.value)" />
+				<input type="range" id="range2" name="passion_1" id="passion_2" class="slider" min="10" max="100" step="10" value="0" style="width:220px;" />
 				<span id="range2">10</span><span> %</span>
+			</p>
+			<h4>Voyages</h4>
+
+			<p>
+				<textarea name="voyages" id="voyages" rows="8" cols="80" placeholder="Si vous avez voyagé, indiquez nous vos dernières destinations"></textarea>
+				<label for="voyages"></label>
+			</p>
+
+			<h4>Bénévolat</h4>
+
+			<p class="">
+				<input type="text" name="nom" id="nom" placeholder="Nom *"/>
+				<label for="nom"></label>
 			</p>
 
 
+			<p class="">
+				<input type="text" name="secteur" id="secteur" placeholder="Secteur"/>
+				<label for="secteur"></label>
+			</p>
+
+
+			<p class="">
+				<label for="benevoles">Nombre de bénévoles * :</label>
+				<select class="" name="benevoles">
+					<option value="1">entre 1 et 9</option>
+					<option value="10">entre 10 et 49</option>
+					<option value="50">entre 50 et 250</option>
+					<option value="50">250 et plus</option>
+				</select>
+			</p>
+
+			<p class="">
+				<input type="url_entreprise" name="url_entreprise" id="url_entreprise" placeholder="Site web"/>
+				<label for="url_entreprise"></label>
+			</p>
+			<br/>
+
+			<p class="">
+				<input type="text" name="poste" id="poste" placeholder="Intitulé du poste"/>
+				<label for="poste"></label>
+			</p>
+
+			<p class="">
+				<input type="text" name="lieu_entreprise" id="lieu_entreprise" placeholder="Localisation du poste"/>
+				<label for="lieu_entreprise"></label>
+			</p>
+			<p class="">
+				<textarea name="role" rows="4" cols="40" id="role" placeholder="Rôle dans l'entreprise"></textarea>
+				<label for="role"></label>
+			</p>
+
+			<p class="">
+				<label for="Duree">Durée du poste * : </label>
+				<span>de </span>
+
+				<select class="" name="mois-debut">
+					<option value="janvier">janvier</option>
+					<option value="fevrier">février</option>
+					<option value="mars">Mars</option>
+					<option value="avril">Avril</option>
+					<option value="mai">Mai</option>
+					<option value="juin">Juin</option>
+					<option value="juillet">Juillet</option>
+					<option value="aout">Août</option>
+					<option value="septembre">Septembre</option>
+					<option value="octobre">Octobre</option>
+					<option value="novembre">Novembre</option>
+					<option value="decembre">Décembre</option>
+					<option value="non_precise"="">Ne pas sélectionner de mois</option>
+				</select>
+				<select class="" name="annee-debut">
+					<?php for ($i=date(Y); $i >= 1950; $i--) : ?>
+						# code...
+						<?= '<option value="'.$i.'">'.$i.'</option>' ?>
+					<?php endfor; ?>
+				</select>
+
+				<span>à </span>
+
+				<select class="" name="mois-debut">
+					<option value="janvier">janvier</option>
+					<option value="fevrier">février</option>
+					<option value="mars">Mars</option>
+					<option value="avril">Avril</option>
+					<option value="mai">Mai</option>
+					<option value="juin">Juin</option>
+					<option value="juillet">Juillet</option>
+					<option value="aout">Août</option>
+					<option value="septembre">Septembre</option>
+					<option value="octobre">Octobre</option>
+					<option value="novembre">Novembre</option>
+					<option value="decembre">Décembre</option>
+					<option value="non_precise"="">Ne pas sélectionner de mois</option>
+				</select>
+				<select class="" name="annee-debut">
+					<?php for ($i=date(Y); $i >= 1950; $i--) : ?>
+						# code...
+						<?= '<option value="'.$i.'">'.$i.'</option>' ?>
+					<?php endfor; ?>
+				</select>
+			</p>
+
+			<p class="">
+				<label for="responsabilite">Responsabilités :</label><br />
+				<input type="text" name="responsabilite1" id="responsabilite1" placeholder="1"/><br />
+				<input type="text" name="responsabilite2" id="responsabilite2" placeholder="2"/><br />
+				<input type="text" name="responsabilite3" id="responsabilite3" placeholder="3"/><br />
+				<input type="text" name="responsabilite4" id="responsabilite4" placeholder="4"/><br />
+				<input type="text" name="responsabilite5" id="responsabilite5" placeholder="5"/>
+			</p>
+
+			<p class="">
+				<label for="responsabilite">Réussites / accomplissements :</label><br />
+				<input type="text" name="reussite1" id="reussite1" placeholder="1"/><br />
+				<input type="text" name="reussite2" id="reussite2" placeholder="2"/><br />
+				<input type="text" name="reussite3" id="reussite3" placeholder="3"/><br />
+				<input type="text" name="reussite4" id="reussite4" placeholder="4"/><br />
+				<input type="text" name="reussite5" id="reussite5" placeholder="5"/>
+			</p>
+
+			<h4>Réseaux sociaux</h4>
+
+			<p class="">
+				<input type="url" name="url_skype" id="url_skype" placeholder="Compte Skype"/>
+				<label for="url_skype"></label>
+			</p>
+			<p class="">
+				<input type="url" name="url_twitter" id="url_twitter" placeholder="Compte Twitter"/>
+				<label for="url_twitter"></label>
+			</p>
+			<p class="">
+				<input type="url" name="url_perso" id="url_perso" placeholder="Site perso"/>
+				<label for="url_perso"></label>
+			</p>
+
+			<h4>Informations diverses</h4>
+
+			<p class="">
+				<textarea name="divers" rows="4" cols="40" id="role" placeholder="Informations diverses que vous souhaitez nous communiquer par rapport à votre CV"></textarea>
+				<label for="divers"></label>
+			</p>
 
 		</fieldset>
 
@@ -417,3 +558,6 @@
 </body>
 
 </html>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
