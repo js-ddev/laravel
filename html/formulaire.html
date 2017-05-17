@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PimpIt!</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<h1>Formulaire CV</h2>
+
+<!-- Test form en GET et uniquement le prénom en required : -->
+
+	<form class="form" action="GET">
+		<h2>Informations obligatoires :</h2>
+
+		<fieldset>
+			<h3>A votre sujet :</h2>
+
+			<p class="">
+			<input type="text" required name="prenom" id="prenom" placeholder="Votre prénom *"/>
+			<label for="prenom"></label>
+			</p>
+
+			<p class="">
+				<input type="text" name="nom" id="nom" placeholder="Votre nom *"/>
+				<label for="nom"></label>
+			</p>
+
+			<p class="">
+				<input type="email" name="email" id="email" placeholder="Votre adresse email *"/>
+				<label for="email"></label>
+			</p>
+
+			<p class="">
+				<input type="date" name="date_naissance" id="date_naissance" placeholder="Votre date de naissance *"/>
+				<label for="date_naissance"></label>
+			</p>
+
+			<p class="file">
+				<input type="file" name="photo" id="photo" placeholder="Si vous souhaitez nous envoyer votre photo de CV"/>
+				<label for="photo"></label>
+			</p>
+		</fieldset>
+
+		<fieldset>
+			<h3>Vos coordonnées :</h2>
+
+			<p class="">
+				<input type="text" name="adresse" id="adresse" placeholder="Numéro de rue et rue *"/>
+				<label for="adresse"></label>
+			</p>
+
+			<p class="">
+				<input type="text" name="ville" id="ville" placeholder="Ville *"/>
+				<label for="ville"></label>
+			</p>
+
+			<p class="">
+				<input type="text" name="code_postal" id="code_postal" placeholder="Code postal *"/>
+				<label for="code_postal"></label>
+			</p>
+
+			<p class="">
+				<input type="text" name="pays" id="pays" placeholder="Pays *"/>
+				<label for="pays"></label>
+			</p>
+			<br />
+
+			<p class="">
+				<input type="text" name="telephone" id="telephone" placeholder="Téléphone *"/>
+				<label for="telephone"></label>
+			</p>
+
+		</fieldset>
+		<h2>Si vous avez déjà un CV, vous pouvez nous l'envoyer :</h2>
+
+		<p class="file">
+			<input type="file" name="CV" id="CV" placeholder="Veuillez uploader votre CV"/>
+			<label for="CV"></label>
+		</p>
+
+		<p class="submit">
+			<input type="submit" name="indos" value="Envoyer"/>
+		</p>
+	</form>
+	<form class="" method="GET">
+
+		<h2>Sinon, vous pouvez nous les donner en dessous :</h2>
+
+		<fieldset>
+			<h3>Informations diverses :</h3>
+
+			<p class="">
+				<label for="situation">Situation familiale *</label>
+				<select class="" name="situation">
+					<option value="célibataire">célibataire</option>
+					<option value="concubinage">concubinage</option>
+					<option value="marié">marié</option>
+					<option value="veuve/veuf">veuve/veuf</option>
+				</select>
+			</p>
+
+			<p class="">
+				<input type="text" name="nationalite" id="nationalite" placeholder="Nationalité *"/>
+				<label for="nationalite"></label>
+			</p>
+
+			<p class="">
+				<label for="permis_sejour">Permis de travail / séjour :</label>
+				<select class="" name="permis_sejour">
+					<option value="travail">travail</option>
+					<option value="sejour">séjour</option>
+					<option value="N/A">N/A</option>
+				</select>
+			</p>
+
+			<p class="">
+				<label for="permis_conduire">Permis de conduire :</label><br />
+				<input type="checkbox" name="permis_a" /><label for="permis_a">Permis A</label><br />
+				<input type="checkbox" name="permis_b" /><label for="permis_b">Permis B</label><br />
+				<input type="checkbox" name="permis_c" /><label for="permis_c">Permis C</label><br />
+				<input type="checkbox" name="permis_d" /><label for="permis_d">Permis D</label><br />
+				<input type="checkbox" name="validation" /><label for="validation">En cours de validation</label><br />
+			</p>
+		</fieldset>
+
+		<fieldset>
+			<h3>Votre expérience :</h3>
+
+				<h4>Entreprise :</h4>
+
+				<p class="">
+					<input type="text" name="nom" id="nom" placeholder="Nom *"/>
+					<label for="nom"></label>
+				</p>
+
+				<p class="">
+					<input type="text" name="produits_services" id="produits_services" placeholder="Produits / Services"/>
+					<label for="produits_services"></label>
+				</p>
+
+				<p class="">
+					<input type="text" name="ca" id="ca" placeholder="Chiffre d'affaire *"/>
+					<label for="ca"></label>
+				</p>
+
+				<p class="">
+					<input type="number" name="effectif" id="effectif" placeholder="Effectif *"/>
+					<label for="effectif"></label>
+				</p>
+
+				<p class="">
+					<input type="url" name="url" id="url" placeholder="Site web"/>
+					<label for="url"></label>
+				</p>
+				<br/>
+
+				<p class="">
+					<input type="poste" name="poste" id="poste" placeholder="Intitulé du poste"/>
+					<label for="poste"></label>
+				</p>
+
+				<p class="">
+					<input type="lieu" name="lieu" id="lieu" placeholder="Localisation du poste"/>
+					<label for="lieu"></label>
+				</p>
+
+				<p class="">
+					<input type="textarea" name="role" id="role" placeholder="Rôle dans l'entreprise du poste"/>
+					<label for="role"></label>
+				</p>
+
+				<p class="">
+					<label for="situation">Situation familiale *</label>
+					<select class="" name="situation">
+						<option value="célibataire">célibataire</option>
+						<option value="concubinage">concubinage</option>
+						<option value="marié">marié</option>
+						<option value="veuve/veuf">veuve/veuf</option>
+					</select>
+				</p>
+
+		</fieldset>
+
+		<p class="submit">
+			<input type="submit" name"cv" value="Envoyer"/>
+		</p>
+
+
+	</form>
+
+</body>
+
+</html>
